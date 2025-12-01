@@ -11,7 +11,7 @@ public class EnigmaFrame extends JFrame {
     public EnigmaFrame() {
         //Enigma Frame
         enigmaFrame.setTitle("Enigma GUI"); 
-        enigmaFrame.setSize(300, 400);          
+        enigmaFrame.setSize(300, 450);          
         enigmaFrame.setLocation(100, 100);              
         enigmaFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -29,13 +29,13 @@ public class EnigmaFrame extends JFrame {
         JLabel lOuter = new JLabel("Out");
         
         //Text Field (tF)
-        JTextField tFStartPos = new JTextField();
+        JTextField tFStartPos = new JTextField(3);
         JLabel lStart = new JLabel("Initial Positions");
 
         //Text Areas (tA)
-        JTextArea tAInput = new JTextArea();
+        JTextArea tAInput = new JTextArea(5, 50);
         JLabel lInput = new JLabel("Input");
-        JTextArea tAOutput = new JTextArea();
+        JTextArea tAOutput = new JTextArea(5, 50);
         JLabel lOutput = new JLabel("Output");
 
         //Panel SetUp
