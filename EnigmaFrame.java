@@ -4,7 +4,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
-public class EnigmaFrame extends JFrame{
+public class EnigmaFrame extends JFrame {
     
     JFrame enigmaFrame = new JFrame();
     
@@ -17,9 +17,7 @@ public class EnigmaFrame extends JFrame{
         
         //Buttons (b)
         JButton bEncrypt = new JButton("Encrypt");
-        JLabel lEncrypt = new JLabel("Encrypt");
         JButton bDecrypt = new JButton ("Decrypt");
-        JLabel lDecrypt = new JLabel("Decrypt");
         
         //Combo Boxes (combo)
         String rotorOptions[] = {"1", "2", "3", "4", "5"};
@@ -62,21 +60,25 @@ public class EnigmaFrame extends JFrame{
         top.add(topMiddle, BorderLayout.CENTER);
         top.add(topRight, BorderLayout.EAST);
 
-        topLeft.add();
-        topLeft.add();
+        topLeft.add(lInner, BorderLayout.EAST);
+        topLeft.add(comboInnerRotor, BorderLayout.CENTER);
+        topLeft.add(lMiddle, BorderLayout.WEST);
 
-        topMiddle.add();
-        topMiddle.add();
+        topMiddle.add(comboMiddleRotor, BorderLayout.EAST);
+        topMiddle.add(lOuter, BorderLayout.CENTER);
+        topMiddle.add(comboOuterRotor, BorderLayout.WEST);
         
-        topRight.add();
-        topRight.add();
+        topRight.add(lStart, BorderLayout.EAST);
+        topRight.add(tFStartPos, BorderLayout.CENTER);
         topRight.add(rightRight, BorderLayout.EAST);
 
         rightRight.add(bEncrypt, BorderLayout.WEST);
         rightRight.add(bDecrypt, BorderLayout.EAST);
 
         //Panels Added to Frame
-        
+        enigmaFrame.add(top, BorderLayout.NORTH);
+        enigmaFrame.add(middle, BorderLayout.CENTER);
+        enigmaFrame.add(bottom, BorderLayout.SOUTH);
 
         enigmaFrame.pack();
         enigmaFrame.setVisible(true); 
