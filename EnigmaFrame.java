@@ -40,9 +40,45 @@ public class EnigmaFrame extends JFrame{
         JTextArea tAOutput = new JTextArea();
         JLabel lOutput = new JLabel("Output");
 
+        //Panel SetUp
+        JPanel top = new JPanel();
+        JPanel middle = new JPanel();
+        JPanel bottom = new JPanel();
+
+        JPanel topLeft = new JPanel();
+        JPanel topMiddle = new JPanel();
+        JPanel topRight = new JPanel();
+
+        JPanel rightRight = new JPanel();
+
+        //Components Added to Panels
+        bottom.add(lOutput, BorderLayout.WEST);
+        bottom.add(tAOutput, BorderLayout.EAST);
+
+        middle.add(lInput, BorderLayout.WEST);
+        middle.add(tAInput, BorderLayout.EAST);
+
+        top.add(topLeft, BorderLayout.WEST);
+        top.add(topMiddle, BorderLayout.CENTER);
+        top.add(topRight, BorderLayout.EAST);
+
+        topLeft.add();
+        topLeft.add();
+
+        topMiddle.add();
+        topMiddle.add();
         
+        topRight.add();
+        topRight.add();
+        topRight.add(rightRight, BorderLayout.EAST);
+
+        rightRight.add(bEncrypt, BorderLayout.WEST);
+        rightRight.add(bDecrypt, BorderLayout.EAST);
+
+        //Panels Added to Frame
         
-        
+
+        enigmaFrame.pack();
         enigmaFrame.setVisible(true); 
     }
 }
