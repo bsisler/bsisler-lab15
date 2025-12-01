@@ -86,19 +86,23 @@ public class EnigmaFrame {
 
         //Button Clicks
         bEncrypt.addActionListener((e) -> {
-            int innerRotor = comboInnerRotor.getSelectedIndex() + 1;
-            int middleRotor = comboMiddleRotor.getSelectedIndex() + 1;
-            int outerRoter = comboOuterRotor.getSelectedIndex() + 1;
+            String innerRotor = Integer.toString(comboInnerRotor.getSelectedIndex() + 1);
+            String middleRotor = Integer.toString(comboMiddleRotor.getSelectedIndex() + 1);
+            String outerRoter = Integer.toString(comboOuterRotor.getSelectedIndex() + 1);
             String initial = tFStartPos.getText();
-            String input = tAInput.getText();
+            String inputString = tAInput.getText();
+            String[] input = {innerRotor, middleRotor, outerRoter, initial, "encrypt", inputString};
+            tAOutput.setText(Comms.run(input));
         });
 
         bDecrypt.addActionListener((e) -> {
-            int innerRotor = comboInnerRotor.getSelectedIndex() + 1;
-            int middleRotor = comboMiddleRotor.getSelectedIndex() + 1;
-            int outerRoter = comboOuterRotor.getSelectedIndex() + 1;
+            String innerRotor = Integer.toString(comboInnerRotor.getSelectedIndex() + 1);
+            String middleRotor = Integer.toString(comboMiddleRotor.getSelectedIndex() + 1);
+            String outerRoter = Integer.toString(comboOuterRotor.getSelectedIndex() + 1);
             String initial = tFStartPos.getText();
-            String input = tAInput.getText();
+            String inputString = tAInput.getText();
+            String[] input = {innerRotor, middleRotor, outerRoter, initial, "decrypt", inputString};
+            tAOutput.setText(Comms.run(input));
         });
     }
 }
