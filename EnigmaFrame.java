@@ -4,7 +4,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
-public class EnigmaFrame extends JFrame {
+public class EnigmaFrame {
     
     JFrame enigmaFrame = new JFrame();
     
@@ -29,7 +29,7 @@ public class EnigmaFrame extends JFrame {
         JLabel lOuter = new JLabel("Out");
         
         //Text Field (tF)
-        JTextField tFStartPos = new JTextField(3);
+        JTextField tFStartPos = new JTextField("###", 3);
         JLabel lStart = new JLabel("Initial Positions");
 
         //Text Areas (tA)
@@ -80,7 +80,25 @@ public class EnigmaFrame extends JFrame {
         enigmaFrame.add(middle, BorderLayout.CENTER);
         enigmaFrame.add(bottom, BorderLayout.SOUTH);
 
+        //Final Touches
         enigmaFrame.pack();
         enigmaFrame.setVisible(true); 
+
+        //Button Clicks
+        bEncrypt.addActionListener((e) -> {
+            int innerRotor = comboInnerRotor.getSelectedIndex() + 1;
+            int middleRotor = comboMiddleRotor.getSelectedIndex() + 1;
+            int outerRoter = comboOuterRotor.getSelectedIndex() + 1;
+            String initial = tFStartPos.getText();
+            String input = tAInput.getText();
+        });
+
+        bDecrypt.addActionListener((e) -> {
+            int innerRotor = comboInnerRotor.getSelectedIndex() + 1;
+            int middleRotor = comboMiddleRotor.getSelectedIndex() + 1;
+            int outerRoter = comboOuterRotor.getSelectedIndex() + 1;
+            String initial = tFStartPos.getText();
+            String input = tAInput.getText();
+        });
     }
 }
