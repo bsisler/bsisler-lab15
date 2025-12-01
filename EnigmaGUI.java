@@ -11,12 +11,3 @@ public class EnigmaGUI {
         new EnigmaFrame();
     }
 }
-
-/* 
- * 
-    System.out.println("medium encryption 2");
-    String expected = "CSHIAWDFGDCOE#EZKJHRWAZDDCBCILON#PKUJEXEXSHINZ";
-    String[] input = {"5", "2", "4", "EST", "encrypt", "THE#NATIONAL#ANIMAL#OF#SCOTLAND#IS#THE#UNICORN"};
-    assertEquals(expected, Comms.run(input));
- * 
-*/
