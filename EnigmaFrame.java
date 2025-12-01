@@ -1,8 +1,5 @@
 import javax.swing.*;
-import javax.swing.border.Border;
-
 import java.awt.*;
-import java.awt.event.*;
 
 public class EnigmaFrame {
     
@@ -86,22 +83,32 @@ public class EnigmaFrame {
 
         //Button Clicks
         bEncrypt.addActionListener((e) -> {
+            //Get Rotor Positions
             String innerRotor = Integer.toString(comboInnerRotor.getSelectedIndex() + 1);
             String middleRotor = Integer.toString(comboMiddleRotor.getSelectedIndex() + 1);
             String outerRoter = Integer.toString(comboOuterRotor.getSelectedIndex() + 1);
+            //Get Starting Char for Rotors
             String initial = tFStartPos.getText();
+            //Get String to Encrypt
             String inputString = tAInput.getText();
+            //Set up Componenets to Pass to Enigma
             String[] input = {innerRotor, middleRotor, outerRoter, initial, "encrypt", inputString};
+            //Run Engima and Set Output
             tAOutput.setText(Comms.run(input));
         });
 
         bDecrypt.addActionListener((e) -> {
+            //Get Rotor Positions
             String innerRotor = Integer.toString(comboInnerRotor.getSelectedIndex() + 1);
             String middleRotor = Integer.toString(comboMiddleRotor.getSelectedIndex() + 1);
             String outerRoter = Integer.toString(comboOuterRotor.getSelectedIndex() + 1);
+            //Get Starting Char for Rotors
             String initial = tFStartPos.getText();
+            //Get Input to Decrypt
             String inputString = tAInput.getText();
+            //Set up Componenets to Pass to Enigma
             String[] input = {innerRotor, middleRotor, outerRoter, initial, "decrypt", inputString};
+            //Run Engima and Set Output
             tAOutput.setText(Comms.run(input));
         });
     }
